@@ -19,3 +19,21 @@ This system allows administrators to:
 - Edit shifts through a responsive Angular UI
   
 ## Architecture
+NurserySystem-APIGateway - Routes requests from frontend to microservices
+NurserySystem-AttendenceAPI- Handles CRUD operations for Rota, Employee shifts,Locations
+NurserySystem-HRWebAPI - Handles CRUD operations for Employee,ContractDetails
+NueserySystem-UI - Angular application for viewing and editing rotas
+HRWebAPI_Test/AttendenceAPI-TestProject - Test cases for test the logic 
+
+## Features
+- Employee CRUD and contract management
+- Weekly rota generation with automatic shift assignment
+- Integration of permanent and bank staff shifts
+- Day-off management for employees
+- Editable rota table in Angular
+  
+## Technology Stack
+- Backend: ASP.NET Core, C#, Repository Pattern
+- Frontend: Angular 19, TypeScript, Bootstrap
+- API Gateway: Ocelot
+- Database: SQL Server
