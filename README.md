@@ -1,5 +1,6 @@
 # Rota Management System
-A microservices-based rota management system for managing employee schedules, shifts, and day-offs. Built with ASP.NET Core, Ocelot API Gateway, and Angular 19.## Table of Contents
+A microservices-based rota management system for managing employee schedules, shifts, and day-offs. Built with ASP.NET Core, Ocelot API Gateway, and Angular 19.
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Architecture](#architecture)
@@ -62,5 +63,5 @@ Nisansala Gunawardana – Full-stack .NET Developer
 - Experienced in ASP.NET MVC/Core, C#, Web API, SQL Server, Angular
 - Built real-world applications for healthcare, retail, and HR
 
-GitHub: https://github.com/Nisansala-Gunawardana
-LinkedIn: linkedin.com/in/nisansala-gunawardana-69a681239
+- GitHub: https://github.com/Nisansala-Gunawardana
+- LinkedIn: linkedin.com/in/nisansala-gunawardana-69a681239
