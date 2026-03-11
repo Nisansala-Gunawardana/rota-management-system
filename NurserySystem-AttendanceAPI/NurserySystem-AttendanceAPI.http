@@ -1,0 +1,6 @@
+@NurserySystem_AttendanceAPI_HostAddress = http://localhost:5243
+
+GET {{NurserySystem_AttendanceAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

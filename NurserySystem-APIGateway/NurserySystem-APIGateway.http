@@ -1,0 +1,6 @@
+@NurserySystem_APIGateway_HostAddress = http://localhost:5137
+
+GET {{NurserySystem_APIGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

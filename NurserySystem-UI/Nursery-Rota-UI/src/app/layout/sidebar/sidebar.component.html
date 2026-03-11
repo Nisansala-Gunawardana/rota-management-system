@@ -1,0 +1,87 @@
+<div class="sidebar-container">
+
+  <!-- Logo -->
+  <div class="logo">
+    <span *ngIf="isExpanded">The Mall Nursery</span>
+    <span *ngIf="!isExpanded">TMN</span>
+  </div>
+
+  <div class="menu">
+
+    <!-- Dashboard -->
+    <a routerLink="/dashboard"
+       routerLinkActive="active-link"
+       class="menu-item">
+
+      <mat-icon>dashboard</mat-icon>
+      <span *ngIf="isExpanded">Dashboard</span>
+    </a>
+
+    <!-- Employees Parent -->
+    <div class="menu-item parent"
+         (click)="toggleEmployeeMenu()">
+
+      <mat-icon>groups</mat-icon>
+      <span *ngIf="isExpanded">Employees</span>
+
+      <mat-icon class="arrow" *ngIf="isExpanded">
+        {{ isEmployeeMenuOpen ? 'expand_less' : 'expand_more' }}
+      </mat-icon>
+    </div>
+
+    <!-- Sub Menu -->
+    <div class="submenu" *ngIf="isEmployeeMenuOpen">
+
+      <a routerLink="/employees/details"
+         routerLinkActive="active-link"
+         class="menu-item child">
+
+        <mat-icon>person</mat-icon>
+        <span *ngIf="isExpanded">Employee Details</span>
+      </a>
+
+      <a routerLink="/employees/contracts"
+         routerLinkActive="active-link"
+         class="menu-item child">
+
+        <mat-icon>description</mat-icon>
+        <span *ngIf="isExpanded">Contract Details</span>
+      </a>
+
+       <a routerLink="/employees/shifts"
+         routerLinkActive="active-link"
+         class="menu-item child">
+
+        <mat-icon>schedule</mat-icon>
+        <span *ngIf="isExpanded">Shift Details</span>
+      </a>
+
+    </div>
+    <!--Configuration Parent-->
+    <div class="menu-item parent" (click)="toggleConfigMenu()">
+      <mat-icon>settings</mat-icon>
+      <span *ngIf="isExpanded">Configuration</span>
+      <mat-icon class="arrow" *ngIf="isExpanded">
+        {{ isConfigMenuOpen ? 'expand_less' : 'expand_more' }}
+      </mat-icon>
+    </div>
+
+    <!--submenu-config-->
+    <div class="submenu" *ngIf="isConfigMenuOpen">
+
+      <a routerLink="/configuration/rooms"
+      routerLinkActive="active-link"
+      class="menu-item child">
+    <mat-icon>meeting_room</mat-icon>
+      <span *ngIf="isExpanded">Room Details</span>
+  </a>
+
+  <a routerLink="/configuration/breaktime"
+      routerLinkActive="active-link"
+      class="menu-item child">
+    <mat-icon>free_breakfast</mat-icon>
+      <span *ngIf="isExpanded">BreakTime Details</span>
+  </a>
+    </div>
+  </div>
+</div>

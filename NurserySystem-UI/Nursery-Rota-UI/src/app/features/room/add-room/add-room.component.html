@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{data?'Edit Room':'Add Room'}}</h2>
+
+<form [formGroup]="roomForm">
+    <div mat-dialog-content>
+
+        <div *ngIf="isEditMode">
+            <p><strong>Room ID:</strong>{{f['id'].value}}</p>
+        </div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Room Code</mat-label>
+            <input matInput formControlName="roomCode">
+            <mat-error *ngIf="f['roomCode'].touched && f['roomCode'].invalid">Room Code is required </mat-error>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="isActive">Active Room</mat-slide-toggle>
+    </div>
+
+    <div mat-dialog-actions align="end">
+        <button mat-button type="button" (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="primary" type="button" (click)="save()"
+            [disabled]="roomForm.invalid">{{isEditMode?'Update':'Save'}}</button>
+    </div>
+
+</form>

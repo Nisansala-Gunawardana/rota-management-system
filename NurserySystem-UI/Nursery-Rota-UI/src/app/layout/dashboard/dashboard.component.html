@@ -1,0 +1,17 @@
+ <mat-sidenav-container autosize class="container mat-elevation-z0">
+
+     <mat-sidenav #sidenav mode="side" [opened]="true" [class.expand]="isExpanded" [class.collapsed]="!isExpanded" class="sidenav">
+       <app-sidebar [isExpanded]="isExpanded"></app-sidebar>
+      </mat-sidenav> 
+
+      <mat-sidenav-content>
+
+        <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+
+        <div class="content">
+          <router-outlet> </router-outlet>
+        </div>
+
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>

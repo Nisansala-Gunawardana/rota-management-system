@@ -1,0 +1,77 @@
+<div class="d-flex" style="height: 100vh;">
+
+  <!-- Sidebar -->
+  <div 
+    class="bg-dark text-white p-3 sidebar"
+    [class.collapsed]="isCollapsed"
+  >
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 *ngIf="!isCollapsed">Nursery</h5>
+      <button class="btn btn-sm btn-outline-light" (click)="toggleSidebar()">
+       <!-- <i class="bi" [ngClass]="isCollapsed ? 'bi-list' : 'bi-x-lg'"></i>-->
+      </button>
+    </div>
+
+    <hr>
+
+    <ul class="nav nav-pills flex-column mt-3">
+
+      <li class="nav-item">
+   <!--     <a class="nav-link text-white" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <i class="bi bi-speedometer2 me-2"></i>
+          <span *ngIf="!isCollapsed">Dashboard</span>
+        </a>-->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/employees" routerLinkActive="active">
+          <i class="bi bi-people-fill me-2"></i>
+          <span *ngIf="!isCollapsed">Employees</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link text-white">
+          <i class="bi bi-calendar-check me-2"></i>
+          <span *ngIf="!isCollapsed">Attendance</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="flex-grow-1 d-flex flex-column">
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-light bg-white shadow-sm px-4">
+      <span class="navbar-brand mb-0 h5">
+        Nursery Management System
+      </span>
+
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown">
+          <i class="bi bi-person-circle me-2"></i>
+          Admin
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="flex-grow-1 p-4 bg-light">
+    <!--  <router-outlet></router-outlet>-->
+    </div>
+
+  </div>
+
+</div>
+
+

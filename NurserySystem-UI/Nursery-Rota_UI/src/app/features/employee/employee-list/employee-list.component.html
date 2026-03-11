@@ -1,0 +1,37 @@
+<mat-card>
+
+    <mat-card-title>Employee List</mat-card-title>
+    <div class="search-box">
+        <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput(keyup)="applyFilter($event)" placeholder="Search Employee">
+
+        </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="ID"></th>
+            <td mat-cell *matCellDef="let element">
+                {{element.firstName}}{{element.surname}}
+            </td>
+        </ng-container>
+         <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="Email"></th>
+            <td mat-cell *matCellDef="let element">
+                {{element.email}}
+            </td>
+        </ng-container>
+         <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="Status"></th>
+            <td mat-cell *matCellDef="let element">
+                <span [ngClass]="element.empStatus?'active':'inactive'">
+{{element.empStatus?'Active':'Inactive'}}
+                </span>
+                
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="5"></mat-paginator>
+</mat-card>

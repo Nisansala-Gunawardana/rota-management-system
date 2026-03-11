@@ -1,0 +1,86 @@
+
+<div class="page-container">
+
+  <div class="page-header">
+    <div class="page-title">
+      <mat-icon>groups</mat-icon>
+      <span>Employees</span>
+    </div>
+    <div class="header-actions">
+  
+      <div class="search-box">
+        <mat-icon>search</mat-icon>
+        <input placeholder="Search employees..." (keyup)="applyFilter($event)">
+      </div>
+      <button mat-raised-button color="primary" (click)="openAddEmployee()">
+        <mat-icon>add</mat-icon>
+        Add Employee
+      </button>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let emp">{{ emp.id }}</td>
+      </ng-container>
+
+      <!-- Name -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let emp">
+          {{ emp.firstName }} {{ emp.surname }}
+        </td>
+      </ng-container>
+
+      <!-- Email -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let emp">{{ emp.email }}</td>
+      </ng-container>
+
+      <!-- Phone -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+        <td mat-cell *matCellDef="let emp">{{ emp.phone }}</td>
+      </ng-container>
+
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let emp">
+          <span [ngClass]="emp.empStatus ? 'status-active' : 'status-inactive'">
+            {{ emp.empStatus ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+      </ng-container>
+     <ng-container matColumnDef="actions">
+  <th mat-header-cell *matHeaderCellDef> Actions </th>
+
+  <td mat-cell *matCellDef="let element">
+    <button mat-icon-button
+            color="primary"
+            (click)="editEmployee(element)"
+            matTooltip="Edit Employee">
+
+      <mat-icon>edit</mat-icon>
+    </button>
+  </td>
+</ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    <!-- PAGINATOR -->
+  <mat-paginator
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons>
+  </mat-paginator>
+  </div>
+
+</div>
